@@ -3,9 +3,16 @@ package week1;
 public class Student {
 
     // TODO: khai báo các thuộc tính cho Student
-
+    private String name,id,group,email;
     // TODO: khai báo các phương thức getter, setter cho Student
-
+    public void setName(String name){this.name=name;}
+    public String getName(){return name;}
+    public void setId(String id){this.id=id;}
+    public String getId(){return id;}
+    public void setGroup(String group){this.group=group;}
+    public String getGroup(){return group;}
+    public void setEmail(String email){this.email=email;}
+    public String getEmail(){return email;}
     /**
      * Constructor 1
      */
@@ -31,8 +38,11 @@ public class Student {
         // TODO:
     }
 
-    String getInfo() {
+    public void getInfo() {
         // TODO:
-        return null; // xóa dòng này sau khi cài đặt
+        System.out.println("Name: "+this.name);
+        System.out.println("ID: "+this.id);
+        System.out.println("Group: "+this.group);
+        System.out.println("Email: "+this.email);
     }
 }

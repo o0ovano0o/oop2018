@@ -19,5 +19,12 @@ public class StudentManagement {
 
     public static void main(String[] args) {
         // TODO:
+        Student em = new Student();
+        em.setName("Nguyen Thi Van Anh");
+        em.setId("17020584");
+        em.setGroup("Int2203 8");
+        em.setEmail("van005618@gmail.com");
+        System.out.println(me.getName());
+        em.getInfo();
     }
 }
