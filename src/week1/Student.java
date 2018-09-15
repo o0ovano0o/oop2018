@@ -16,8 +16,12 @@ public class Student {
     /**
      * Constructor 1
      */
-    Student() {
+    public Student() {
         // TODO:
+        name="Student";
+        id="000";
+        group="INT22041";
+        email="uet@vnu.edu.vn";
     }
 
     /**
@@ -26,16 +30,24 @@ public class Student {
      * @param sid
      * @param em
      */
-    Student(String n, String sid, String em) {
+    public Student(String n, String sid, String em) {
         // TODO:
+        name=n;
+        id=sid;
+        email=em;
+        group="INT22041";
     }
 
     /**
      * Constructor 3
      * @param s
      */
-    Student(Student s) {
+    public Student(Student s) {
         // TODO:
+        this.name=s.name;
+        this.id=s.id;
+        this.group=s.group;
+        this.email=s.email;
     }
 
     public void getInfo() {
