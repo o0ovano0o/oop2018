@@ -18,17 +18,40 @@ public class StudentManagement {
 
     void studentsByGroup() {
         // TODO:
-        HashMap<String, Student> map = new HashMap<String, Student>();
-        for (int i = 0; i < max; i++) {
-            map.put(students[i].getGroup(), students[i]);
+        // Dùng HashMap và Set....
+//        HashMap<String, Student> map = new HashMap<String, Student>();
+//        for (int i = 0; i < max; i++) {
+//            map.put(students[i].getGroup(), students[i]);
+//        }
+//        Set<String> groups = map.keySet();
+//        for (String group : groups) {
+//            for (int i = 0; i < max; i++) {
+//                if (group.equals(students[i].getGroup()))
+//                    students[i].getInfo();
+//            }
+//        }
+        String[] groups=new String[max];
+        groups[0]=students[0].getGroup();
+        boolean test =true;
+        int z=1;
+        for(int i=1;i<max;i++){
+            test=true;
+            for(int j=i-1;j>=0;j--){
+                if(sameGroup(students[i],students[j]))
+                {  test=false;
+                   break;}
+            }
+            if(test){
+                groups[z++]= students[i].getGroup();
+            }
         }
-        Set<String> groups = map.keySet();
-        for (String group : groups) {
-            for (int i = 0; i < max; i++) {
-                if (group.equals(students[i].getGroup()))
+        for(int j=0;j<z;j++){
+            for(int i=0;i<max;i++){
+                if(groups[j].equals(students[i].getGroup()))
                     students[i].getInfo();
             }
         }
+
     }
 
     void removeStudent(String id) {
@@ -41,10 +64,6 @@ public class StudentManagement {
                     students[j].setGroup(students[j + 1].getGroup());
                     students[j].setEmail(students[j + 1].getEmail());
                 }
-//                students[i].setName("Student");
-//                students[i].setId("000");
-//                students[i].setGroup("INT22041");
-//                students[i].setEmail("uet@vnu.edu.vn");
                 max -= 1;
                 System.out.println("Deleted");
                 return;
