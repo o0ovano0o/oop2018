@@ -77,12 +77,11 @@ public class StudentManagement {
         me1.setGroup("INT22042");
         Student me2 = new Student("Opppaaaa","17020555","iloveyou@gmail.com");
         Student me3 = new Student(me2);
-        StudentManagement st = new StudentManagement();
         me1.getInfo();
         me2.getInfo();
         me3.getInfo();
-        System.out.println(st.sameGroup(me1,me2));
-        System.out.println(st.sameGroup(me2,me3));
+        System.out.println(sameGroup(me1,me2));
+        System.out.println(sameGroup(me2,me3));
 //        // test studentsByGroup && removeStudent
 //        StudentManagement sv = new StudentManagement();
 //        for (int i = 0; i < sv.max; i++) {
