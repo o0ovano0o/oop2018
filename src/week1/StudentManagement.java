@@ -9,11 +9,10 @@ public class StudentManagement {
     int max = 100;
     private Student[] students = new Student[max];
 
-    public boolean sameGroup(Student s1, Student s2) {
+    public static boolean sameGroup(Student s1, Student s2) {
         // TODO:
-        if (s1.getGroup().equals(s2.getGroup()))
-            return true;
-        return false;
+        return s1.getGroup().equals(s2.getGroup());
+           
     }
 
     void studentsByGroup() {
