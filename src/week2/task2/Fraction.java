@@ -55,9 +55,9 @@ public class Fraction {
     public  static  void main(String[] args){
         Fraction a= new Fraction(4,5);
         Fraction b = new Fraction(3,2);
-        System.out.println("4/5 + 3/2 = "+a.add(b).format());
-        System.out.println("4/5 - 3/2 = "+a.subtract(b).format());
-        System.out.println("4/5 * 3/2 = "+a.multiply(b).format());
-        System.out.println("4/5 : 3/2 = "+a.divide(b).format());
+        System.out.println(a.format()+" + "+b.format()+" = "+a.add(b).format());
+        System.out.println(a.format()+" + "+b.format()+" = "+a.subtract(b).format());
+        System.out.println(a.format()+" + "+b.format()+" = "+a.multiply(b).format());
+        System.out.println(a.format()+" + "+b.format()+" = "+a.divide(b).format());
     }
 }
