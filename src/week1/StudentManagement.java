@@ -7,7 +7,7 @@ import java.util.HashSet;
 public class StudentManagement {
 
 
-    int n = 0;
+    int n = 0;// số đối tượng có trong mảng
     private Student[] students = new Student[100];
 
     public static boolean sameGroup(Student s1, Student s2) {
