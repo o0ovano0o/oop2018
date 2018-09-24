@@ -2,6 +2,8 @@ package week2.task2;
 
 import  week2.task1.Task1;
 
+import javax.xml.transform.sax.SAXSource;
+
 public class Fraction {
 
     // TODO: khai báo các thuộc tính
@@ -58,6 +60,13 @@ public class Fraction {
          int ucln =Task1.gcd(this.numerator,this.denominator);
         return new Fraction(this.numerator/ucln,this.denominator/ucln);
     }
+    public boolean equals(Fraction other){
+        if(this.subtract(other).numerator==0){
+            return true;
+        }
+        return false;
+    }
+
     public  static  void main(String[] args){
         Fraction a= new Fraction(9,5);
         Fraction b = new Fraction(6,5);
@@ -65,5 +74,6 @@ public class Fraction {
         System.out.println(a.format()+" + "+b.format()+" = "+a.subtract(b).format());
         System.out.println(a.format()+" + "+b.format()+" = "+a.multiply(b).format());
         System.out.println(a.format()+" + "+b.format()+" = "+a.divide(b).format());
+        System.out.println(a.format()+" equals "+b.format()+" : "+a.equals(b));
     }
 }
