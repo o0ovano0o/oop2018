@@ -2,7 +2,6 @@ package week2.task2;
 
 import  week2.task1.Task1;
 
-import javax.xml.transform.sax.SAXSource;
 
 public class Fraction {
 
@@ -60,7 +59,8 @@ public class Fraction {
          int ucln =Task1.gcd(this.numerator,this.denominator);
         return new Fraction(this.numerator/ucln,this.denominator/ucln);
     }
-    public boolean equals(Fraction other){
+    public boolean equals(Object obj){
+        Fraction other= ( Fraction ) obj;
         if(this.subtract(other).numerator==0){
             return true;
         }
