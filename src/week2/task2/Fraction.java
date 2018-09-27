@@ -68,12 +68,12 @@ public class Fraction {
     }
 
     public  static  void main(String[] args){
-        Fraction a= new Fraction(9,5);
-        Fraction b = new Fraction(6,5);
+        Fraction a= new Fraction(-7,4);
+        Fraction b = new Fraction(-3,4);
         System.out.println(a.format()+" + "+b.format()+" = "+a.add(b).format());
-        System.out.println(a.format()+" + "+b.format()+" = "+a.subtract(b).format());
-        System.out.println(a.format()+" + "+b.format()+" = "+a.multiply(b).format());
-        System.out.println(a.format()+" + "+b.format()+" = "+a.divide(b).format());
+        System.out.println(a.format()+" - "+b.format()+" = "+a.subtract(b).format());
+        System.out.println(a.format()+" * "+b.format()+" = "+a.multiply(b).format());
+        System.out.println(a.format()+" / "+b.format()+" = "+a.divide(b).format());
         System.out.println(a.format()+" equals "+b.format()+" : "+a.equals(b));
     }
 }
