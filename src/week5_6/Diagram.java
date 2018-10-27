@@ -37,11 +37,11 @@ public class Diagram {
             }
         }
         this.layers.clear();
-        this.layers.add(0, cricles);;
-        this.layers.add(1, squares);;
-        this.layers.add(2, rectangles);;
-        this.layers.add(3, hexagons);;
-        this.layers.add(4, triangles);;
+        this.layers.add( cricles);;
+        this.layers.add( squares);;
+        this.layers.add( rectangles);;
+        this.layers.add( hexagons);;
+        this.layers.add( triangles);;
     }
 
 }
