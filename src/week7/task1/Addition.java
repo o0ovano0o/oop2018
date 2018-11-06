@@ -8,7 +8,9 @@ public class Addition extends BinaryExpression {
         this.left = left;
         this.right = right;
     }
+    public Addition(){
 
+    }
     @Override
     public Expression left() {
         return left;

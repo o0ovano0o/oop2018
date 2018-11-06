@@ -1,6 +1,13 @@
 package week7.task2;
 
+import week7.task1.Addition;
+import week7.task1.Division;
+import week7.task1.Expression;
+import week7.task1.Square;
+
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Task2 {
@@ -16,13 +23,16 @@ public class Task2 {
         int s=5/0;
     }
     public void ClassCastException() throws ClassCastException{
+
         throw  new ClassCastException();
     }
-    public void IOException() throws IOException{
-        throw new IOException();
+    public void IOException() throws IOException {
+        throw new IOException("lỗi");
     }
     public void FilenotFound() throws FileNotFoundException{
-        throw  new FileNotFoundException();
+        File file = new File("file.txt");
+        FileReader filereader = new FileReader(file);
+//        throw  new FileNotFoundException();
     }
     public static void main(String[] args) {
         Task2 test = new Task2();
