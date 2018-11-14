@@ -11,15 +11,14 @@ public class Task1 {
     public List<String> getAllFunction(String path){
         File file = new File(path);
         FileReader fr = null;
-        List<String> a = new ArrayList<String>();
+        List<String> a = new ArrayList<>();
         String line="";
-        String b="";
         try {
             fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             while((line=br.readLine())!=null) {
                 if(line.indexOf("static")>0) {
-                    a.add(line);
+                    a.add(line.replace("{",""));
                 }
             }
             fr.close();
@@ -29,7 +28,19 @@ public class Task1 {
         return a;
     }
     public String getFinctionbyname(String name){
-        return null;
+        List<String> b = getAllFunction("C:\\Users\\Administrator\\IdeaProjects\\oop2018\\src\\week9\\Utils.java");
+        for(int i=0;i<b.size();i++){
+            String l = b.get(i);
+            l=l.substring(1);
+            l=l.replace(" folderPath","");
+            l=l.replace(" filename","");
+            l=l.replace(" path","");
+            if(l.indexOf(name)>0){
+                return "Co phuong thuc "+name;
+            }
+        }
+
+    return "Khong co phuong thuc "+name;
     }
     public static void main(String[] args) {
         Task1 task1 = new Task1();
@@ -37,5 +48,7 @@ public class Task1 {
         for(int i=0;i<method1.size();i++){
             System.out.println(method1.get(i));
         }
+        System.out.println(task1.getFinctionbyname("cwriteContenttoFile(String)"));
+
     }
 }
