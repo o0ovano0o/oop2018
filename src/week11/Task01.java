@@ -1,23 +1,26 @@
 package week11;
 
-public class Task2 {
-    public static <T extends Comparable<T>> void  getmin(T[] a){
-        T min=a[0];
-        for(int i=0; i<a.length-1; i++) {
-            if(a[i].compareTo(min)<0) {
-                   min=a[i];
-                }
-            }
-        System.out.println(min);
-    }
+import java.util.ArrayList;
+
+public class Task01 {
     public static <T> void print(T[] a){
         for(int i=0;i<a.length;i++){
             System.out.print(a[i]+" ");
         }
         System.out.println();
     }
-
-
+    public static <T extends Comparable<T>> void  sort(T[] a){
+        T temp;
+        for(int i=0; i<a.length-1; i++) {
+            for(int j=0; j<a.length-1-i; j++) {
+                if(a[j].compareTo(a[j + 1])<0) {
+                    temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         Integer[] inte ={5245,6,3,435,89,0,12,3,9,12};
         Float[] floa = {32.3f,5.4f,0.3f,2.2f,19.7f,19.5f,3.4f,23.4f,45.4f,3.5f};
@@ -33,12 +36,19 @@ public class Task2 {
         print(shorts);
         print(longs);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        getmin(inte);
-        getmin(floa);
-        getmin(doubl);
-        getmin(chara);
-        getmin(bytes);
-        getmin(shorts);
-        getmin(longs);
+        sort(inte);
+        sort(floa);
+        sort(doubl);
+        sort(bytes);
+        sort(shorts);
+        sort(longs);
+        sort(chara);
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        print(inte);
+        print(floa);
+        print(chara);
+        print(bytes);
+        print(shorts);
+        print(longs);
     }
 }
