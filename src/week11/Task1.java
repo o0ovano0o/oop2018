@@ -1,134 +1,26 @@
 package week11;
 
-import java.util.Random;
-public class Task1 {
-     public static void print(Integer a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  print(Double a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  print(Float a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  print(Character a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  print(Byte a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  print(Short a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  print(Long a[]){
-        for(int i=0;i<a.length;i++){
-            System.out.print(a[i]+" ");
-        }
-        System.out.println();
-    }
-    public static void  sort(Integer a[]){
-        int temp;
-        for(int i=0; i<a.length-1; i++) {
-            for(int j=0; j<a.length-1-i; j++) {
-                if(a[j] > a[j+1]) {
-                    temp = a[j];
-                    a[j] = a[j+1];
-                    a[j+1] = temp;
-                }
-            }
-        }
-    }
-    public static void  sort(Double a[]) {
-        double temp;
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = 0; j < a.length - 1 - i; j++) {
-                if (a[j] > a[j + 1]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-    }
-    public static void  sort(Float a[]) {
-        float temp;
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = 0; j < a.length - 1 - i; j++) {
-                if (a[j] > a[j + 1]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-    }
-    public static void  sort(Byte a[]){
-        byte temp;
-        for(int i=0; i<a.length-1; i++) {
-            for(int j=0; j<a.length-1-i; j++) {
-                if(a[j] > a[j+1]) {
-                    temp = a[j];
-                    a[j] = a[j+1];
-                    a[j+1] = temp;
-                }
-            }
-        }
-    }
-    public static void  sort(Short a[]){
-        Short temp;
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = 0; j < a.length - 1 - i; j++) {
-                if (a[j] > a[j + 1]) {
-                    temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-        }
-    }
-    public static void  sort(Character a[]){
-            char temp;
-            for(int i=0; i<a.length-1; i++) {
-                for(int j=0; j<a.length-1-i; j++) {
-                    if(a[j] > a[j+1]) {
-                        temp = a[j];
-                        a[j] = a[j+1];
-                        a[j+1] = temp;
-                    }
-                }
-            }
-        }
-     public static void  sort(Long a[]){
-            long temp;
-            for(int i=0; i<a.length-1; i++) {
-                for(int j=0; j<a.length-1-i; j++) {
-                    if(a[j] > a[j+1]) {
-                        temp = a[j];
-                        a[j] = a[j+1];
-                        a[j+1] = temp;
-                    }
-                }
-            }
-    }
+import java.util.ArrayList;
 
+public class Task1 {
+    public static <T> void print(T[] a){
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    public static <T extends Comparable<T>> void  sort(T[] a){
+        T temp;
+        for(int i=0; i<a.length-1; i++) {
+            for(int j=0; j<a.length-1-i; j++) {
+                if(a[j].compareTo(a[j + 1])<0) {
+                    temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         Integer[] inte ={5245,6,3,435,89,0,12,3,9,12};
         Float[] floa = {32.3f,5.4f,0.3f,2.2f,19.7f,19.5f,3.4f,23.4f,45.4f,3.5f};
