@@ -2,13 +2,13 @@ package week11;
 
 public class Task2 {
     public static <T extends Comparable<T>> void  getmin(T[] a){
-        T min=a[0];
+        T max=a[0];
         for(int i=0; i<a.length-1; i++) {
-            if(a[i].compareTo(min)<0) {
-                   min=a[i];
+            if(a[i].compareTo(max)>0) {
+                   max=a[i];
                 }
             }
-        System.out.println(min);
+        System.out.println(max);
     }
     public static <T> void print(T[] a){
         for(int i=0;i<a.length;i++){
