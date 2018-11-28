@@ -9,6 +9,7 @@ class BubbleSort implements Sort {
 
     @Override
     public void sort(int arr[], int n) {
+        System.out.println("Bubble Sort");
        for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -25,6 +26,7 @@ class SelectionSort implements Sort{
 
     @Override
     public void sort(int[] arr, int n) {
+        System.out.println("Selection Sort");
             int i,imin,j,temp;
             for (i=0; i<=n-2; i++)
             {
@@ -42,10 +44,17 @@ class SelectionSort implements Sort{
     }
 
 public class Task2 {
+    Sort sort;
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
+    }
+
     public static void main(String[] args) {
+        Task2 task2 = new Task2();
         int[] arr={3,2,5,7,9,5,3,6,8,9,4,1,0,7};
-        BubbleSort bs= new BubbleSort();
-        bs.sort(arr,arr.length);
+        task2.setSort(new BubbleSort());
+        task2.sort.sort(arr,arr.length);
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
